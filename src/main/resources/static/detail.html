@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.or"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/detail_style.css" />
+    <script src="js/detail_main.js"></script>
+    <title>Spring 자세히 보기</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <h2>
+          Spring <br />
+          게시판 만들기
+        </h2>
+      </div>
+      <div class="navbar">
+        <i class="fas fa-home" id="home"></i>
+        <i class="fas fa-edit" id="edit"></i>
+        <i class="fas fa-trash" id="delete"></i>
+      </div>
+      <div class="content__container">
+        <div class="detail__edit">
+          <div class="content-header">
+            <input
+              type="text"
+              class="detail-input"
+              placeholder="수정하실 제목을 적어주세요!"
+            />
+            <p class="post-author-edit"></p>
+            <hr />
+          </div>
+          <div class="content-body">
+            <textarea
+              cols="30"
+              rows="10"
+              class="detail-textarea"
+              placeholder="수정하실 내용을 적어주세요!"
+            ></textarea>
+          </div>
+          <div class="content-footer">
+            <button class="edit-btn cancel">취소</button>
+            <button class="edit-btn edit" onclick="editArticle()">수정</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="comments-container">
+        <div class="show_username">
+          <div th:if="!${username}">
+            로그인 하셔야 댓글을 달수 있습니다! <br />
+            <a href="/user/login" class="link-signup">로그인 하러 가기</a>
+          </div>
+          <div th:if="${username}">
+            반갑습니다! &nbsp
+            <div th:text="${username}" class="username01"></div>
+          </div>
+        </div>
+        <div class="post__comment">
+          <textarea
+            class="post__comment-textarea"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="여러분의 소중한 댓글을 입력해주세요."
+          ></textarea>
+          <div class="send__btn">
+            <button class="send__comment" onclick="create_comment()">
+              Send
+            </button>
+          </div>
+        </div>
+
+        <div class="comment__card-box">
+          <div class="comment__card">
+            <div class="comment__card-header">
+              username<span class="comment-date">2021-03-29</span>
+            </div>
+            <div class="comment__card-body">
+              <div class="commnt">댓글댓글</div>
+              <div class="comment-btn">
+                <i class="far fa-edit"></i>
+                <i class="fas fa-trash-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="comment__card">
+            <div class="comment__card-header">
+              username<span class="comment-date">2021-03-29</span>
+            </div>
+            <div class="comment__card-body">
+              <div class="comment__card-body-left">
+                <div class="comment">댓글댓글</div>
+                <div class="edit-commnet-textarea-wrap">
+                <textarea
+                        class="edit-commnet-textarea"
+                        name=""
+                        cols="30"
+                        rows="10"
+                ></textarea>
+                </div>
+              </div>
+              <div class="comment-btn">
+                <div class="befor">
+                  <i class="far fa-edit"></i>
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+                <div class="after">
+                  <i class="fas fa-check"></i>
+                  <i class="fas fa-times"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="comment__card">
+            <div class="comment__card-header">
+              username<span class="comment-date">2021-03-29</span>
+            </div>
+            <div class="comment__card-body">
+              <div class="commendt">댓글댓글</div>
+              <div class="comment-btn">
+                <i class="far fa-edit"></i>
+                <i class="fas fa-trash-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <a href="https://github.com/strong1133"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </div>
+  </body>
+</html>

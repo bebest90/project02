@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.or"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="OC의 스프링블로그" />
+    <meta property="og:description" content="스프링부트의 CRUD구현 블로그" />
+    <meta property="og:image" content="SJ_Main.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/login_style.css" />
+    <script src="/js/login.js"></script>
+    <title>Spring 로그인</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="login-container">
+        <div class="navbar">
+          <a><i class="fab fa-staylinked"></i></a>
+        </div>
+        <div class="contents">
+          <form action="/user/login" method="post" class="form">
+            <div class="form__title">
+              <h1 class="login__title">Oc_blog</h1>
+              <div
+                th:if="${loginError}"
+                class="alert alert-danger"
+                role="alert"
+              >
+                아이디 또는 패스워드가 잘못되었습니다.
+              </div>
+            </div>
+            <div class="form__inputs">
+              <input type="text" name="username" id="id" placeholder="ID" />
+              <input type="password" name="password" id="pw" placeholder="PW" />
+            </div>
+            <button id="login-btn">로그인</button>
+          </form>
+          <button
+                  id="login-kakao-btn"
+                  class=""
+                  onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=8dddd1a6ee05e121f2b81ea14582123b&redirect_uri=http://mypl.shop/user/kakao/callback&response_type=code'"
+          >
+            <span class="ico_kakao_type1"></span>
+            카카오톡으로 로그인
+          </button>
+          <div class="go_signup">
+            <p>
+              아직 회원이 아니라면? &nbsp&nbsp&nbsp&nbsp
+              <a onclick="location.href='/user/signup'" class="link-signup">
+                회원가입 하러가기</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

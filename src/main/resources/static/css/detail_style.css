@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  overflow: scroll;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+textarea:focus {
+  outline: none;
+}
+.wrap {
+  width: 100vw;
+  /* height: 100vh; */
+}
+
+.fa-trash-alt {
+  margin-left: 13px;
+}
+
+.header {
+  max-width: 100%;
+
+  height: 250px;
+  padding: 20px;
+
+  background-position: bottom;
+  background-size: cover;
+  /* background: no-repeat; */
+  text-align: center;
+}
+.header1{
+  background-image: url("../images/background4.png");
+}
+.header2{
+  background-image: url("../images/background5.png");
+}
+.header3{
+  background-image: url("../images/background6.png");
+}
+.header4{
+  background-image: url("../images/background7.png");
+}
+
+.header > h2 {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin-top: 70px;
+  color: beige;
+  font-family: 'Black Han Sans', sans-serif;
+  font-weight: 10;
+  font-size: 30px;
+}
+
+.navbar {
+  max-width: 100%;
+  height: 25px;
+  padding: 5px;
+  font-size: 22px;
+  /* line-height: 25px; */
+  color: white;
+  background-color: #241c1a;
+  display: flex;
+  justify-content: center;
+}
+.navbar > i {
+  padding: 0 30px;
+  line-height: 25px;
+  cursor: pointer;
+}
+.navbar > i:hover {
+  color: #4c89b5;
+}
+.content__container {
+  max-width: 100%;
+  height: 70%;
+  padding: 57px 64px 5px 60px;
+}
+.comments-container {
+  max-width: 100%;
+  margin: auto;
+  height: 70%;
+  padding: 0 64px 10px 60px;
+  margin-bottom: 100px;
+}
+.show_username {
+  padding: 15px;
+  width: 400px;
+  line-height: 1.6;
+  font-size: 20px;
+  font-weight: 600;
+  color: #241c1a;
+}
+.link-signup {
+  color: black;
+  text-decoration: underline;
+}
+.post__comment {
+  background-color: whitesmoke;
+  border-radius: 3px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 20px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+.post__comment > textarea {
+  width: 90%;
+  height: 90px;
+  margin: auto;
+  /* padding: 15px; */
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  resize: none;
+}
+.send__btn {
+  text-align: right;
+  width: 80%;
+  margin: auto;
+}
+.send__comment {
+  position: relative;
+  width: 60px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  background-color: cadetblue;
+  margin-top: 10px;
+}
+
+.comment__card-box {
+  width: 100%;
+  margin-top: 15px;
+  margin: auto;
+}
+.comment__card {
+  margin-top: 20px;
+  padding: 10px 0 10px 0;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+.comment__card-header {
+  font-size: 20px;
+}
+.comment__card-header .comment-date {
+  color: dimgray;
+  margin-left: 20px;
+  font-size: 12px;
+}
+.comment__card-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.content-header > h1 {
+  margin-bottom: 0;
+  color: #241c1a;
+}
+.content-header > p {
+  margin-top: 0;
+  padding: 10px 3px;
+  color: #4c89b5;
+}
+.post-date {
+  color: dimgray;
+}
+.content-body {
+  padding: 15px;
+  border-bottom: 1px solid dimgray;
+  font-family: "Nanum Myeongjo", serif;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  color: #241c1a;
+  height: 350px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 30px;
+  background-color: #241c1a;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+}
+.footer > a > i:hover {
+  color: #4c89b5;
+}
+/* #delete {
+  color: s
+} */
+
+.detail-input {
+  border: none;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  width: 220px;
+  height: 10px;
+  padding: 10px;
+  /* margin-left: 10px; */
+}
+.detail-textarea {
+  border: none;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: -17px;
+  width: 103%;
+  height: 200px;
+  resize: none;
+}
+.content-footer {
+  text-align: center;
+  margin: 15px;
+}
+.edit-btn {
+  width: 70px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4c89b5;
+  color: white;
+}
+.edit-comment-wrap {
+  width: 80%;
+}
+.edit-btn:hover {
+  background-color: salmon;
+}
+.comment-btn {
+  display: flex;
+  flex-direction: column-reverse;
+  cursor: pointer;
+}
+.edit-comment-textarea{
+  display: none;
+  width: 100%;
+  height: 100px;
+}
+
+.send__comment{
+  cursor: pointer;
+}
+.detail__edit {
+  display: none;
+}
+.befor {
+}
+.after {
+  display: none;
+}

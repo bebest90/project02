@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html
+  lang="KR"
+  xmlns:th="http://www.thymeleaf.or"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="OC의 스프링블로그" />
+    <meta property="og:description" content="스프링부트의 CRUD구현 블로그" />
+    <meta property="og:image" content="favic.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <title>Spring 게시판</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="left__container">
+        <div class="left__mask"></div>
+        <h1 class="main-title">스프링<br />게시판 만들기</h1>
+        <div class="avartar_wrap">
+          <img class="avartar" src="images/SJ_Main.png" alt="" />
+        </div>
+        <div class="show_username">
+          <div th:if="!${username}">
+            아직 회원이 아니시군요? <br />
+            <a href="/user/signup" class="link-signup">회원 가입하러 가기</a>
+          </div>
+          <div th:if="${username}"><div th:text="${username}" class="fas fa-sign-out-alt"></div></div>
+        </div>
+        <div class="left__container-footer">
+          <i class="fas fa-key footer-btn nav-key"></i>
+          <i class="fas fa-pen footer-btn nav-pen" ></i>
+          <i class="fab fa-github footer-btn nav-git"></i>
+          <i class="fab fa-instagram footer-btn nav-insta"></i>
+        </div>
+      </div>
+      <div class="right__container">
+        <div class="contents__container">
+          <div class="contents__container-header">
+            <h2>전체 글</h2>
+            <h2><i class="fas fa-pen" id="posting-pen"></i></h2>
+          </div>
+          <hr />
+          <div class="card__container">
+            <div class="card">
+              <div class="card-header">
+                <a href="detail.html" class="article-title"
+                  ><h2>항해99_WIL#2 - 챕터2. 알고리즘!! - 1주차 회고</h2></a
+                >
+              </div>
+              <div class="card-body">
+                <p>
+                알고리즘은 어렵다 알고리즘은 어렵다
+                  알고리즘은 어렵다
+                  알고리즘은 어렵다
+                </p>
+              </div>
+              <div class="card-footer">
+                <p class="post-author">
+                  권오철 <span class="post-date">| 2021. 3. 14. 19:56</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="posting__contianer">
+          <div class="posting__contianer__wrap">
+            <div class="posting__contianer-title">
+              <p
+                class="input-name"
+              ><div th:if="${username}"><div class="cur_username" th:text="${username}"></div></div></p>
+              <input
+                class="input-title"
+                type="text"
+                placeholder="제목을 입력하세요"
+              />
+            </div>
+            <hr />
+            <textarea
+              class="posting-textarea"
+              name="posting-textarea"
+              placeholder="내용을 적어주세요!"
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="posting__contianer-footer">
+            <button id="cancel-btn" class="posting-btn">취소</button>
+            <button id="save-btn" onclick="postArticle()" class="posting-btn">
+              완료
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
