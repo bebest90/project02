@@ -15,7 +15,7 @@ function goHome(){
 
 function navBtn(){
     $('.nav-git').on('click',function (){
-        window.location.href="https://github.com/strong1133"
+        window.location.href="https://github.com/bebest90/project02"
     })
     $('.nav-pen').on('click',function (){
         if ($('.link-signup').text() == "회원 가입하러 가기" ){
